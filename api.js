@@ -15,6 +15,21 @@ let cats = [
     { id: 14, name: "Bella", age: 1, breed: "Siamese", colour: "Blue Point", temperament: "Loyal", image: "https://www.hepper.com/wp-content/uploads/2021/05/Blue-Point-Siamese.jpg" }
 ]
 
+const temperaments = [
+    'Affectionate',
+    'Bold',
+    'Calm',
+    'Curious',
+    'Energetic',
+    'Friendly',
+    'Independent',
+    'Loyal',
+    'Playful',
+    'Reserved',
+    'Shy',
+    'Sociable'
+]
+
 function getAllCats() {
     return new Promise(res => {
         setTimeout(() => res(cats), 1000)
@@ -35,6 +50,21 @@ function removeCat(catId) {
         setTimeout(() => {
             cats = cats.filter(cat => cat.id !== catId)
             res()
+        }, 1000)
+    })
+}
+
+function updateCat(catId, data) {
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            const i = cats.findIndex(cat => cat.id === catId)
+
+            if (i < 0) {
+                return rej(`Cat with ID ${catId} not found`)
+            }
+
+            cats[i] = { ...cats[i], ...data, id: catId }
+            res(cats[i])
         }, 1000)
     })
 }
