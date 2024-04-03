@@ -25,8 +25,8 @@ The functions provided are asynchronous, which means they return Promises.
 1. Display a list of all cats using the card template structure.
 2. Enable the breed filter form by adding a click event listener to the button.
 3. Enable deleting cats from the list by adding a click event listener to the delete button on cat cards. When a cat is deleted, the list of cats displayed on screen should update to reflect the change in data. This **must** happen without reloading the page.
-4. Enable updating a cat by adding a form submit event listener.
 
-## Extension
+## Extensions
 
-- Comment out your initial solution and implement a solution using [The Cat API](https://thecatapi.com/)
+1. Enable updating a cat by adding a form submit event listener.
+2. Comment out your initial solution and implement a solution using [The Cat API](https://thecatapi.com/)
