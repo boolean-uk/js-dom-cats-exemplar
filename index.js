@@ -1,7 +1,7 @@
 let breedFilter = undefined
 
 function createCatCard(catObject) {
-    const mainElement = document.createElement('li')
+    const mainElement = document.createElement('div')
     mainElement.innerHTML = `
 <li class="card">
     <button id="delete-button">Delete</button><h2 class="card--title">${catObject.name}</h2>
@@ -32,6 +32,7 @@ function createCatCard(catObject) {
             <li><button type="submit">Update</button></li></ul></form>
 </li>
     `
+    mainElement.querySelector('.card').style['background-image'] = `url(${catObject.image})`
     const selectElement = mainElement.querySelector('select#temperament')
     const temperamentOption = selectElement.querySelector(`option[value="${catObject.temperament}"]`)
     temperamentOption.setAttribute('selected', true)
