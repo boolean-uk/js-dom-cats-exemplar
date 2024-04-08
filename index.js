@@ -5,7 +5,7 @@ let breedFilter = undefined
 function createCatCard(catObject) {
     const mainElement = document.createElement('li')
     mainElement.innerHTML = `
-    <button>Delete</button>
+    <button id="delete-button">Delete</button>
     <h2 class="card--title">${catObject.name}</h2>
     <img
         width="256"
@@ -43,6 +43,14 @@ function createCatCard(catObject) {
     const selectElement = mainElement.querySelector('select#temperament')
     const temperamentOption = selectElement.querySelector(`option[value="${catObject.temperament}"]`)
     temperamentOption.setAttribute('selected', true)
+    const deleteCatButton = mainElement.querySelector('button#delete-button')
+    console.log(deleteCatButton)
+    deleteCatButton.addEventListener('click', async (event) => {
+        console.log('deleting cat', catObject.id)
+        event.preventDefault()
+        await removeCat(catObject.id)
+        await addCatCardsToDOM()
+    })
 
     return mainElement
 }
@@ -58,11 +66,9 @@ async function addCatCardsToDOM() {
 }
 
 async function getAvailableCats() {
-    const allCats = await getAllCats()
-    console.log('getting cats by breed', breedFilter);
-    const availableBreeds = breedFilter ? allCats.filter(cat => cat.breed === breedFilter) : allCats
+    const allCats = breedFilter ? await getCatsByBreed(breedFilter) : await getAllCats()
 
-    return availableBreeds
+    return allCats
 }
 
 function attachBreedFilter() {
