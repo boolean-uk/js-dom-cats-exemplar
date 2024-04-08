@@ -1,5 +1,3 @@
-console.log(cats)
-console.log(temperaments)
 let breedFilter = undefined
 
 function createCatCard(catObject) {
@@ -44,9 +42,7 @@ function createCatCard(catObject) {
     const temperamentOption = selectElement.querySelector(`option[value="${catObject.temperament}"]`)
     temperamentOption.setAttribute('selected', true)
     const deleteCatButton = mainElement.querySelector('button#delete-button')
-    console.log(deleteCatButton)
     deleteCatButton.addEventListener('click', async (event) => {
-        console.log('deleting cat', catObject.id)
         event.preventDefault()
         await removeCat(catObject.id)
         await addCatCardsToDOM()
@@ -73,6 +69,7 @@ async function getAvailableCats() {
 
 function attachBreedFilter() {
     const breedFilterInput = document.querySelector('#breed-input')
+    breedFilter = breedFilterInput.value
     const breedFilterSubmit = document.querySelector('#filter-button')
     breedFilterSubmit.addEventListener('click', (event) => {
         event.preventDefault()
@@ -81,5 +78,5 @@ function attachBreedFilter() {
     })
 }
 
-addCatCardsToDOM()
 attachBreedFilter()
+addCatCardsToDOM()
