@@ -3,20 +3,17 @@ let breedFilter = undefined
 function createCatCard(catObject) {
     const mainElement = document.createElement('li')
     mainElement.innerHTML = `
-    <button id="delete-button">Delete</button>
-    <h2 class="card--title">${catObject.name}</h2>
+<li class="card">
+    <button id="delete-button">Delete</button><h2 class="card--title">${catObject.name}</h2>
     <img
         width="256"
         class="card--img"
         src="${catObject.image}"
-    />
-    <form>
-        <ul class="card--text">
+    /><form><ul class="card--text">
             <li>Age: <input name="age" type="number" value="${catObject.age}" /></li>
             <li>Breed: <input name="breed" type="text" value="${catObject.breed}" /></li>
             <li>Colour: <input name="colour" type="text" value="${catObject.colour}" /></li>
-            <li>
-                Temperament:
+            <li>Temperament:
                 <select id="temperament" name="temperament">
                     <option value="Affectionate">Affectionate</option>
                     <option value="Bold">Bold</option>
@@ -32,11 +29,8 @@ function createCatCard(catObject) {
                     <option value="Sociable">Sociable</option>
                 </select>
             </li>
-            <li>
-                <button type="submit">Update</button>
-            </li>
-        </ul>
-    </form>
+            <li><button type="submit">Update</button></li></ul></form>
+</li>
     `
     const selectElement = mainElement.querySelector('select#temperament')
     const temperamentOption = selectElement.querySelector(`option[value="${catObject.temperament}"]`)
