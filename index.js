@@ -45,13 +45,13 @@ function createCatCard(catObject) {
     deleteCatButton.addEventListener('click', async (event) => {
         event.preventDefault()
         await removeCat(catObject.id)
-        await addCatCardsToDOM()
+        await render()
     })
 
     return mainElement
 }
 
-async function addCatCardsToDOM() {
+async function render() {
     const cardsContainer = document.querySelector('.cards')
     cardsContainer.replaceChildren()
     const catsData = await getAvailableCats()
@@ -74,9 +74,9 @@ function attachBreedFilter() {
     breedFilterSubmit.addEventListener('click', (event) => {
         event.preventDefault()
         breedFilter = breedFilterInput.value
-        addCatCardsToDOM()
+        render()
     })
 }
 
 attachBreedFilter()
-addCatCardsToDOM()
+render()
