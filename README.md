@@ -26,6 +26,8 @@ The functions provided are asynchronous, which means they return Promises.
 2. Enable the breed filter form by adding a click event listener to the button.
 3. Enable deleting cats from the list by adding a click event listener to the delete button on cat cards. When a cat is deleted, the list of cats displayed on screen should update to reflect the change in data. This **must** happen without reloading the page.
 
+**For all the operations above, use the provided API-like functions (see `api.js`)!**
+
 ## Extensions
 
 1. Enable updating a cat by adding a form submit event listener.
