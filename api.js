@@ -11,7 +11,7 @@ let cats = [
     { id: 10, name: "Cleo", age: 2, breed: "Maine Coon", colour: "Tabby", temperament: "Sociable", image: "https://img.pixers.pics/pho_wat(s3:700/FO/41/66/76/70/700_FO41667670_b776c5b2831a9b149c8a8859b7dd1809.jpg,700,464,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,414,jpg)/wall-murals-liegende-maine-coon-in-der-farbe-black-tabby-1.jpg.jpg" },
     { id: 11, name: "Milo", age: 4, breed: "Persian", colour: "Cream", temperament: "Playful", image: "https://www.catster.com/wp-content/uploads/2023/12/longhair-cat-golden-blue-chinchilla-with-green-eyes_OksanaSusoeva_shutterstock.jpg" },
     { id: 12, name: "Smokey", age: 3, breed: "Scottish Fold", colour: "Gray", temperament: "Calm", image: "https://imagevars.gulfnews.com/2018/8/3/1_16a08500d3c.2261003_127640103_16a08500d3c_medium.jpg" },
-    { id: 13, name: "Tiger", age: 2, breed: "Maine Coon", colour: "Orange", temperament: "Bold", image: "https://www.katdootje.nl/wp-content/uploads/Orange-Maine-Coon-on-Stone-Wall.webp" },
+    { id: 13, name: "Nestore", age: 5, breed: "Maine Coon", colour: "Orange", temperament: "Calm", image: "https://i.postimg.cc/VvLRy1fg/nestore.jpg" },
     { id: 14, name: "Bella", age: 1, breed: "Siamese", colour: "Blue Point", temperament: "Loyal", image: "https://www.hepper.com/wp-content/uploads/2021/05/Blue-Point-Siamese.jpg" }
 ]
 
