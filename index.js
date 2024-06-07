@@ -16,6 +16,19 @@ filterSubmitButton.addEventListener("click", async () => {
   renderCatsList(filteredCats);
 });
 
+function handleDeleteCatClick(cat) {
+  removeCat(cat.id).then(() => {
+    // fetch all cats again and re-render
+    fetchCats();
+  });
+}
+
+// ALTERNATIVE to handleDeleteCatClick
+// async function handleDeleteCatClick(cat) {
+//   await removeCat(cat.id);
+//   fetchCats();
+// }
+
 // FUNCTIONS FOR RENDERING
 function renderCatsList(cats) {
   // clear existing cats list
@@ -60,6 +73,7 @@ function createCatCard(cat) {
 function createDeleteCatButton(cat) {
   const button = document.createElement("button");
   button.innerText = "Delete";
+  button.addEventListener("click", () => handleDeleteCatClick(cat));
   return button;
 }
 
