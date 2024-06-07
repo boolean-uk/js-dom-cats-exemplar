@@ -1,9 +1,20 @@
 // SELECT Existing DOM elements
 const catCardsUL = document.querySelector(".cards");
+const filterSubmitButton = document.querySelector("#filter-button");
+const filterTextInput = document.querySelector("#breed-input");
+
 // FUNCTIONS TO INTERACT WITH STATE
 function fetchCats() {
   getAllCats().then((cats) => renderCatsList(cats));
 }
+
+// FUNCTIONS TO HANDLE USER INPUT EVENTS
+// NOTE: using async function here, so we can call await
+filterSubmitButton.addEventListener("click", async () => {
+  const filterText = filterTextInput.value;
+  const filteredCats = await getCatsByBreed(filterText);
+  renderCatsList(filteredCats);
+});
 
 // FUNCTIONS FOR RENDERING
 function renderCatsList(cats) {
