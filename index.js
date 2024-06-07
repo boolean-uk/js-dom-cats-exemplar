@@ -112,12 +112,32 @@ function createCardForm(cat) {
   const temperamentSelect = createTemperamentSelect(cat);
   liTemperament.append(temperamentSelect);
 
+  const submitButton = document.createElement("button");
+  submitButton.type = "submit";
+  submitButton.innerText = "Submit";
+
+  // bind form submit here
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    // get the new values
+    const data = {
+      age: ageInput.value,
+      breed: breedInput.value,
+      colour: colourInput.value,
+      temperament: temperamentSelect.value,
+    };
+
+    updateCat(cat.id, data).then(() => fetchCats());
+  });
+
   // build form
   form.append(ul);
   ul.append(liAge);
   ul.append(liBreed);
   ul.append(liColour);
   ul.append(liTemperament);
+  ul.append(submitButton);
 
   return form;
 }
